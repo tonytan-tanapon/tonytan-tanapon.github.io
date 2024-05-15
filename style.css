@@ -21,11 +21,46 @@ nav ul {
 
 nav ul li {
     margin: 0 1em;
+    position: relative; /* Required for dropdown positioning */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757;
 }
 
 footer {
@@ -55,22 +90,21 @@ footer {
 
 /* Home Page */
 .hero {
-    text-align: center;
     padding: 5em 1em;
     background: #f4f4f4;
-}
-
-.hero-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.hero-text {
-    flex: 1;
-    min-width: 250px;
-    padding: 1em;
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .hero-image {
@@ -85,31 +119,44 @@ footer {
     border-radius: 50%;
 }
 
+.hero-text {
+    flex: 2;
+    min-width: 250px;
+    padding: 1em;
+    text-align: left;
+}
+
+.hero-text h1 {
+    margin-bottom: 0.5em;
+}
+
 .greeting {
     font-size: 1.2em;
     margin-top: 1em;
 }
 
 /* About Page */
-.about, .career, .skills, .education {
-    padding: 2em 1em;
+.about, .skills, .experience, .education {
+    padding: 1em 1em;
     max-width: 800px;
     margin: auto;
 }
 
-.hidden {
-    display: none;
+.about + .skills,
+.skills + .experience,
+.experience + .education {
+    margin-top: 1.5em; /* Similar margin to the gap between projects */
 }
 
 /* Projects Page */
 .projects {
-    padding: 2em 1em;
+    padding: 1em 1em; /* Adjusted padding to match about page */
     max-width: 800px;
     margin: auto;
 }
 
 .project {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em; /* Adjusted margin to match about page */
 }
 
 .project a {
@@ -121,11 +168,50 @@ footer {
     text-decoration: underline;
 }
 
+/* Project Detail Page */
+.project-detail {
+    padding: 2em 1em;
+    max-width: 800px;
+    margin: auto;
+}
+
+.project-detail h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.project-detail h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.project-detail ul {
+    list-style: disc;
+    padding-left: 1.5em;
+}
+
+.project-detail p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-detail p a:hover {
+    text-decoration: underline;
+}
+
 /* Contact Page */
 .contact {
     padding: 2em 1em;
     max-width: 600px;
     margin: auto;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .contact form {
@@ -135,6 +221,7 @@ footer {
 
 .contact form label {
     margin: 0.5em 0 0.2em;
+    font-weight: bold;
 }
 
 .contact form input,
@@ -143,6 +230,13 @@ footer {
     margin-bottom: 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .contact form button {
@@ -152,6 +246,7 @@ footer {
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 1em;
 }
 
 .contact form button:hover {
