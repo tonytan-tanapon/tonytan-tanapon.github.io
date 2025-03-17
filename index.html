@@ -30,6 +30,45 @@
         .social-links a:hover {
             opacity: 0.7;
         }
+
+        .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+    gap: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.project-item {
+    text-align: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item a {
+    display: block;
+}
+
+.project-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.project-item p {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
     </style>
 
 
@@ -83,133 +122,31 @@
       
   </section>
   <section class="projects">
-    <h2>Projects</h2>
-
-    <div >
-        <h3>Database management (Node.js, javascript, HTML, CSS, Boostrap, MySQL)</h3>
-        <a href="https://github.com/tonytan-tanapon/basicNodeAndRDB"><img src="/images/database.png" alt="Project Image" width="500" height=auto /></a>
-        <p>This project enables users to seamlessly add, edit, update, and delete user records while ensuring efficient data handling. It features pagination for easy navigation through multiple entries and dynamically fetches user data from the backend to keep records up to date in real time. </p>
-        <p><b>Features</b></p>
-        <ul>
-            <li>Add, edit, update, and delete users.</li>
-            <li>Pagination to navigate through users.</li>
-            <li>Fetch user data from the backend.</li>
-        </ul>
-    </div>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <div >
-        <h3>File management (Node.js, javascript, HTML, CSS, Boostrap, MySQL)</h3>
-        <a href="https://github.com/tonytan-tanapon/basicNodeAndRDB"><img src="/images/filemanagement.png" alt="Project Image" width="500" height=auto /></a>
-        <p>The File Management system allows users to upload, download, and delete files efficiently. Users can select a file and upload it to the server, where it is securely stored. A list of uploaded files is displayed, providing options to download or delete each file.</p>
-
-        <p>The system fetches and updates the file list dynamically from the backend, ensuring real-time availability of uploaded files. This feature simplifies file handling and ensures a smooth user experience.</p>
-        <p><b>Features</b></p>
-        <ul>
-            <li>Upload files to the server.</li>
-            <li>List all uploaded files with options to download or delete.</li>
-        </ul>
-    </div>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <div >
-        <h3>AI: Image classification using Tensorflow.js model (Tensorflow.js, Node.js, javascript, HTML, CSS)</h3>
-        <a href="https://github.com/tonytan-tanapon/basicNodeAndRDB"><img src="/images/butterbear.png" alt="Project Image" width="500" height=auto /></a>
-        <p>The AI Image Classification feature allows users to upload an image and classify it using TensorFlow.js with the MobileNet model. When an image is uploaded, it is displayed in the interface, and the system processes it to generate predictions.</p>
-        <p>The model analyzes the image and returns the predicted class along with a confidence score. This feature demonstrates real-time AI inference within the browser without requiring a backend server, making it fast and efficient for classification tasks.</p>
-        <p><b>Features</b></p>
-        <ul>
-            <li>Upload an image and classify it using TensorFlow.js (MobileNet model).</li>
-            <li>Display classification results on the UI.</li>
-        </ul>
-    </div>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <div >
-        <h3>Linear search animation (javascript, HTML, CSS)</h3>
-        <a href="https://github.com/tonytan-tanapon/basicNodeAndRDB"><img src="/images/linearsearch.png" alt="Project Image" width="500" height=auto /></a>
-        <p>The Linear Search feature visually demonstrates how the linear search algorithm works. It generates a set of random numbers displayed as bars in a chart. When a user enters a number to search, the system highlights each bar sequentially until it finds a match or reaches the end of the array.</p>
-
-        <p>The search process is animated with color changes, where the current bar being checked turns red, and if a match is found, it turns green. If the number is not found, a message is displayed. This feature helps users understand the step-by-step process of linear search interactively.</p>
-        <ul>
-            <li>Generate an array of random numbers.</li>
-            <li>Perform a linear search on the array.</li>
-            <li>Animate the search process and display search results.</li>
-        </ul>
-    
-    </div>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-    
-    <div class="project">
-        <h2><a href="https://github.com/tonytan-tanapon/autotest">Automated Trading System</a></h2>
+    <h2>My Projects</h2>
+    <div class="project-grid">
+        <div class="project-item">
+            <a href="https://github.com/tonytan-tanapon/project/"><img src="/images/database.png" alt="Project Image" width="500" height=auto /></a>
+            <p>Database Management</p>
+        </div>
+        <div class="project-item">
+            <a href="https://github.com/tonytan-tanapon/project"><img src="/images/filemanagement.png" alt="Project Image" width="500" height=auto /></a>
+                
+            <p>File Management</p>
+        </div>
+        <div class="project-item">
+            <a href="./ai.html"><img src="/images/butterbear.png" alt="Project Image" width="500" height=auto /></a>
+                
+            <p>AI Image Classification</p>
+        </div>
+        <div class="project-item">
+            <a href="./linearSearch/index.html"><img src="/images/linearsearch.png" alt="Project Image" width="500" height=auto /></a>
+                
+            <p>Linear Search Animation</p>
+        </div>
         
-
-        <p>This project involved developing a sophisticated automatic trading system using Java, design patterns, TWS API, GitHub, and Firebase to enhance trading efficiency and automation capabilities.</p>
-        <h2>Features</h2>
-        <ul>
-            <li>Automated trading strategies</li>
-            <li>Integration with TWS API</li>
-            <li>Optimized program speed using design patterns</li>
-            <li>Rigorous testing for reliability and stability</li>
-        </ul>
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Java</li>
-            <li>TWS API</li>
-            <li>Design Patterns</li>
-            <li>Firebase</li>
-        </ul>
-    </div>
-
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <div class="project">
-        <h2>Mentorship of Senior Projects</a></h2>
-        <p>Advised and mentored over 30 senior projects focused on software engineering and AI. Utilized tools and languages such as Java, Python, TensorFlow, MySQL, and NoSQL, leading to significant improvements in project accuracy and performance.</p>
-        <ul>
-            <li>2022: Developing an algorithm for making stock trading range to recommend investment opportunities (Python, Time series)</li>
-            <li>2022: A Study of the Exploration of Strategies in Oware Game with Alpha-Beta Pruning Minimax Algorithm (Python, Genetic algorithm, Neural Network, Searching algorithm)</li>
-            <li>2021: Forecasting the spread of the COVID-19 pandemic in Thailand using ARIMA and SARIMA (R, Time series)</li>
-            <li>2021: A development of hotel booking with collaborative filtering (Python, Sentiment analysis)</li>
-            <li>2021: Automated Bus Detection with Deep Convolutional Neural Network (Python, Tensorflow, DCNN)</li>
-            <li>2021: Thai-Clickbait Classification using Machine learning (Python, Sentiment analysis)</li>
-            <li>2021: Text Classification of Illicit Drug Ads on Twitter (Python, Sentiment analysis)</li>
-            <li>2021: Multiclass Medium document classification (Python, Text classification)</li>
-            <li>2020: Handling Imbalanced text Data (Python, Text classification)</li>
-            <li>2020: Fuzzy logic on Forex technical analysis (MetaQuotes Language 4 (MQL4), Time series analysis)</li>
-            <li>2019: A study of supervised learning techniques to increase profit from selling products (Python, classification)</li>
-        </ul>
-        
-    </div>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <div class="project">
-        <h2>Course Responsibilities</a></h2>
-        <p>I have been responsible for teaching and developing the curriculum for a range of courses. These responsibilities have helped me enhance my teaching skills and stay updated with the latest advancements in technology and education.</p>
-    <h2>Courses Taught (Languages and Tools)</h2>
-    <ul>
-        <li>Computer Programming (Python, C, C#, Java, Java script, GitHub)</li>
-        <li>AI and Machine Learning (Python, NumPy, Pandas, Scikit-Learn, TensorFlow, Deep learning)</li>
-        <li>Database Management System (SQL, MySQL, Oracel, PostgreSQL, AWS, GCP, Azure)</li>
-        <li>Introduction to Data Science (Python, R, SQL, MySQL)</li>
-        <li>Data Mining (Python,R)</li>
-        <li>Big Data Analysis (Python, Hadoop, Spark)</li>
-        <li>Object Oreinted Programming (Java, Pattern design)</li>
-        <li>Webe and Mobile Application Programming (Node.js, Java script, Java, Kotlinm, Flask, Python, React, HTML, CSS, GitHub)</li>
-        <li>Internet of Things (C)</li>
-        <li>Software Engineering (SDLC, Docker, CI/CD, GitHub )</li>
-        <li>Computer Graphics (Blender)</li>
-        <li>Discrete Mathematics</li>
-        <li>Calculus</li>
-        <li>Statistics for Health Science</li>
-    </ul>
-    <hr className="border-t-2 border-gray-300 my-6 w-full" />
-
-    <h2>Summary</h2>
-    <p>As an educator, I strive to provide students with a strong foundation in computer science and software engineering. My goal is to equip them with the knowledge and skills necessary to excel in the rapidly evolving tech industry. By focusing on both theoretical concepts and practical applications, I aim to foster a comprehensive understanding of the subjects I teach.</p>
-  
     </div>
 </section>
+
     
 </main>
 
